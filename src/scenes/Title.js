@@ -8,7 +8,7 @@ class Title extends Phaser.Scene {
         this.cameras.main.setBackgroundColor('#000'); // Black background
 
         // Game title
-        this.add.text(game.config.width / 2, 150, "P4 Rumia", {
+        this.add.text(game.config.width / 2, 150, "P3 Rumia", {
             fontSize: '48px',
             fontFamily: 'Arial',
             fontStyle: 'bold',
