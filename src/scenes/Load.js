@@ -41,8 +41,10 @@ class Load extends Phaser.Scene {
         this.load.image('test',  'https://labs.phaser.io/assets/sprites/phaser3-logo.png');
 
         
-
-
+        this.load.audio('hitHurt1', './assets/audio/hitHurt1.wav')
+        this.load.audio('hitHurt2', './assets/audio/hitHurt2.wav')
+        this.load.audio('hitHurt3', './assets/audio/hitHurt3.wav')
+        this.load.audio('pickUp1', './assets/audio/pickupCoin.wav')
     }
     create() {
         //alert('aaa')

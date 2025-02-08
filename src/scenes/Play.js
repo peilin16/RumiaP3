@@ -171,7 +171,18 @@ class Play extends Phaser.Scene {
     gameOver(){
         this.scene.start('titleScene');
     }
-        
+    getAudio(require){
+        if (require === 'p') {
+            return this.sound.add('pickUp1'); // ✅ Return pickup sound
+        } 
+        else if (require === 'h') {
+            let hitSounds = ['hitHurt1', 'hitHurt2', 'hitHurt3'];
+            let randomSound = Phaser.Math.RND.pick(hitSounds); // ✅ Random selection
+            return this.sound.add(randomSound);
+        } 
+        return null; // If invalid input
+
+    }    
 
     spawnKedama() {
         let count = Phaser.Math.Between(2, 4); // Random number of enemies
@@ -205,7 +216,8 @@ class Play extends Phaser.Scene {
         //alert('aaa')
         if(!rumia.isDrop){
             if(!obj.isEmeny){
-
+                let pickUpSound = this.getAudio('p');
+                if (pickUpSound) pickUpSound.play();
                 obj.behavior(rumia);
                 obj.dropOff();
 
@@ -218,6 +230,11 @@ class Play extends Phaser.Scene {
                 rumia.healthly--; // Reduce health
                 score -= 5
                 rumia.setTexture('rumiaflyhit');
+
+                let hitSound = this.getAudio('h');
+                if (hitSound) hitSound.play();
+
+                
                 if(rumia.healthly < 0){
                     rumia.dropOff();
                     this.time.delayedCall(3000, () => {
