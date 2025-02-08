@@ -4,9 +4,10 @@ class Tree1 extends Phaser.Physics.Arcade.Sprite {
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
-        
+        this.isEmeny = true;
+        this.kind = 't'
         this.body.setSize(60, 160, true); // Adjust hitbox size
-        this.body.setOffset(70, 65); // ✅ Offset to better fit sprite
+        this.body.setOffset(70, 65);  
     }
 
     update() {
@@ -16,6 +17,9 @@ class Tree1 extends Phaser.Physics.Arcade.Sprite {
         if (this && this.x < -150) {
             this.destroy();
         }
+    }
+    dropOff(){
+        //Nothing !
     }
     reset(){
         this.x = game.config.width

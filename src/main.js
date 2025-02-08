@@ -28,16 +28,17 @@ let config = {
             }
         }
     },
-    scene: [Load, Play ]
+    scene: [Load, Title, Play ]
 }
 
 // uncomment the following line if you need to purge local storage data
 //localStorage.clear();
-let emenyspeed = -350;
-let treeSpeed = 3;
-
-
-
+let score = 0;
+let ScoreRate = 1;
+let treeSpeed = 2;
+let keyA,keyS,keyD,keyW,keyK,keyJ,keyShift,keyESC,keySpace
+let rumiaX,rumiaY
+let emenySpeed = 3;
 // define game
 let game = new Phaser.Game(config);
 
