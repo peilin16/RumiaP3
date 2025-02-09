@@ -30,7 +30,7 @@ class Daiyousei extends Phaser.GameObjects.Sprite{
         this.isEmeny = false;
         this.isDrop = false;
         this.kind = 'd'
-        this.Speed = -2;
+        this.Speed = -2.5;
 
         this.body.setSize(75, 75, true); // Adjust hitbox size
         this.body.setOffset(0, 5);  
