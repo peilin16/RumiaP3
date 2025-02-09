@@ -216,8 +216,10 @@ class Play extends Phaser.Scene {
         //alert('aaa')
         if(!rumia.isDrop){
             if(!obj.isEmeny){
-                let pickUpSound = this.getAudio('p');
-                if (pickUpSound) pickUpSound.play();
+                if(obj.isTouch == false){
+                    let pickUpSound = this.getAudio('p');
+                    if (pickUpSound) pickUpSound.play();
+                }
                 obj.behavior(rumia);
                 obj.dropOff();
 
