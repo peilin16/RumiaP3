@@ -54,6 +54,7 @@ class Fairy extends Phaser.GameObjects.Sprite{
     }
     dropOff(){
         this.isDrop = true
+        this.anims.stop();
         this.setTexture('sunflowerFairyHit');
         
         this.scene.tweens.add({
