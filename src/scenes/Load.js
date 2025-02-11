@@ -19,8 +19,11 @@ class Load extends Phaser.Scene {
         // background load
         this.load.image('backgroundtop', './assets/img/background.png');
         this.load.image('backgrounddown', './assets/img/background-down.png');
-        //emeny load
+        //state assets load
         this.load.image('tree1', './assets/img/tree1.png');
+        this.load.image('snow1', './assets/img/snow1.png');
+        this.load.image('snow2', './assets/img/snow2.png');
+        this.load.image('snow3', './assets/img/snow3.png');
 
         //pill load
         this.load.image('Kedama', './assets/img/Pill.png');
@@ -28,16 +31,15 @@ class Load extends Phaser.Scene {
         //Daiyousei load
         this.load.image('DaiyouseiNothing1', './assets/img/Daiyousei-nothing1.png');
         this.load.image('DaiyouseiNothing2', './assets/img/Daiyousei-nothing2.png');
-        this.load.image('DaiyouseiNothing3', './assets/img/Daiyousei-nothing3.png');
         this.load.image('DaiyouseiScore1', './assets/img/Daiyousei-score1.png');
         this.load.image('DaiyouseiScore2', './assets/img/Daiyousei-score2.png');
-        this.load.image('DaiyouseiScore3', './assets/img/Daiyousei-score3.png');
         //flower fairy load
         this.load.image('sunflowerFairy1', './assets/img/sunflowerFairy1.png');
         this.load.image('sunflowerFairy2', './assets/img/sunflowerFairy2.png');
         this.load.image('sunflowerFairy3', './assets/img/sunflowerFairy3.png');
         this.load.image('sunflowerFairyHit', './assets/img/sunflowerFairy-hit1.png');
-        //test load
+        
+        //s load
         this.load.image('test',  'https://labs.phaser.io/assets/sprites/phaser3-logo.png');
 
         
@@ -45,6 +47,7 @@ class Load extends Phaser.Scene {
         this.load.audio('hitHurt2', './assets/audio/hitHurt2.wav')
         this.load.audio('hitHurt3', './assets/audio/hitHurt3.wav')
         this.load.audio('pickUp1', './assets/audio/pickupCoin.wav')
+        this.load.audio('background', './assets/audio/background1.wav')
     }
     create() {
         //alert('aaa')

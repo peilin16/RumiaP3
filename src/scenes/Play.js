@@ -97,6 +97,19 @@ class Play extends Phaser.Scene {
             callbackScope: this,
             loop: true
         });
+        //snow
+        this.snowGroup = this.physics.add.group(); // Create a group for snowflakes
+
+        this.time.addEvent({
+            delay: 700, // Every 0.7 seconds
+            callback: () => {
+                let snowflake = new Snow(this);
+                this.snowGroup.add(snowflake);
+            },
+            callbackScope: this,
+            loop: true
+        });
+
 
          
         this.physics.add.collider(this.rumia, this.daiyouseiGroup, this.handleCollision, null, this);
@@ -130,7 +143,16 @@ class Play extends Phaser.Scene {
         this.RumiahealthText = this.add.text(50, 20, '[H]:'+this.rumia.healthly, this.scoreConfig).setOrigin(0.5)
         this.CurrentScoreText = this.add.text(50, 40, '[P]:'+ score, this.scoreConfig).setOrigin(0.5)
        
-        
+        //music
+
+        this.bgMusic = this.sound.add('background', { 
+        loop: true, // Loop the music infinitely
+        volume: 0.5 // Adjust volume (0.0 to 1.0)
+        });
+
+        this.bgMusic.play();
+
+
     }
 
     // create new barriers and add them to existing barrier group
@@ -166,6 +188,12 @@ class Play extends Phaser.Scene {
             }
         });
 
+        this.snowGroup.children.iterate(snow => {
+            if (snow && typeof snow.update === 'function') {
+                snow.update(); // Safely update each tree
+            }
+        });
+        
     }
 
     gameOver(){
@@ -240,6 +268,7 @@ class Play extends Phaser.Scene {
                 if(rumia.healthly < 0){
                     rumia.dropOff();
                     this.time.delayedCall(3000, () => {
+                        this.bgMusic.stop(); // Stop background music
                         this.gameOver();
                     }, [], this);            
                     //this.gameOver();
