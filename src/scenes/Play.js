@@ -124,7 +124,7 @@ class Play extends Phaser.Scene {
         this.physics.add.collider(this.rumia, this.trees, this.handleCollision, null, this);
 
 
-        this.input.enableDebug(this.rumia, 0xff00ff);
+        //this.input.enableDebug(this.rumia, 0xff00ff);
 
 
         //Text
