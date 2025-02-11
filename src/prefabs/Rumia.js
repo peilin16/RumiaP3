@@ -114,7 +114,7 @@ class Rumia extends Phaser.GameObjects.Sprite{
         this.scene.tweens.add({
             targets: this,
             angle: 360, 
-            duration: 1500, 
+            duration: 6500, 
             ease: 'Linear',
             repeat: -1, 
             onComplete: () => {
